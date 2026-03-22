@@ -25,11 +25,6 @@ Built with special consideration for a **Premium Glassmorphism UI** & dynamic us
 
 ---
 
-## 📱 Screenshots / Demo
-*(Include a link or placeholders for your screenshots or a YouTube/Drive link of your Demo Video here)*
-
----
-
 ## 🛠 Setup & Installation
 
 **1. Clone the repository**
