@@ -1,55 +1,70 @@
-# 🚀 React Native To-Do Application (Premium Edition)
+# 🚀 React Native To-Do App (Assignment)
 
-A production-ready Mobile To-Do List Application built using **React Native CLI** and **TypeScript**. 
-This project was designed for a high-quality user experience featuring a custom **Glassmorphism Dark Theme**, **Firebase Authentication**, and an advanced **Mixed-Priority Sorting Algorithm**.
+A modern, full-featured To-Do application built with **React Native CLI** and **TypeScript**. This application includes Firebase Authentication, real-time data syncing using Firestore, and an advanced Task Sorting Algorithm. 
 
-## ✨ Features & Assignment Objectives Completed
-
-### 1. Mandatory Requirements Achieved (100%)
-- **React Native CLI (TypeScript)**: Clean setup and type-safety across components.
-- **Firebase Authentication**: Secure User Registration and Login via Email/Password credentials.
-- **Context API for State Management**: Efficient, decoupled flow avoiding prop-drilling or large dependencies (`AuthContext` & `TaskContext`).
-- **Complete Task CRUD**: Creating, viewing, checking (marking completed), and deleting tasks flawlessly.
-- **Task Meta-data**: Users can add Titles, Descriptions, Dates, Deadlines, and Priority levels for each task via a sleek Modal UI.
-
-### 2. 🌟 Bonus Core Features & Enhancements Implemented
-- **🔥 Mixed Sorting Algorithm (Deadline + Priority Mix)**: The task list is automatically sorted using a custom mathematical weightage formula. Tasks closest to the deadline and labeled 'High Priority' are pushed to the top of the queue dynamically!
-- **🎨 Glassmorphism & Dark UI**: A visually appealing, translucent card effect using custom `rgba` styling boundaries and layered drop shadows to give a premium feel over a deep dark background (`#121212`).
-- **📱 Optimistic UI Updates**: The "Add Task" modal instantly vanishes upon clicking save to give zero-latency visual feedback before the background sync completes.
-- **🔍 Smart Filtering & Searching**: Added native-speed `useMemo` search logic to filter through tasks by Title/Description and segment them by Pending/Completed status.
-
-## 🛠️ Project Clean Architecture
-The application is structured for scalability and readability:
-```text
-src/
-├── components/       # Reusable UI Blocks (e.g., TaskCard with Glassmorphism)
-├── context/          # State Managers (AuthContext, TaskContext)
-├── screens/          # Application Views (AuthScreen, TodoListScreen)
-├── services/         # Firebase Integrations & Listeners
-├── theme/            # Global Constants (Color Tokens)
-└── types/            # TypeScript Interfaces (Task, User)
-```
-
-## ⚙️ Getting Started (Run the App Locally)
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/AdityaChaudhary0002/todoAPP_ReactNative.git
-   cd todoAPP_ReactNative
-   ```
-
-2. **Install Dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Android Setup:**
-   - Ensure an Android Emulator is running.
-   - *Note: Ensure you place your `google-services.json` file in `android/app/` to connect to your Firebase Project.*
-   - Run the application:
-   ```bash
-   npm run android
-   ```
+Built with special consideration for a **Premium Glassmorphism UI** & dynamic user experience.
 
 ---
-*Developed for the React Native Developer Assignment.*
+
+## 🌟 Features Implemented
+
+### 🎯 Core Requirements
+- **User Authentication:** Secure Registration & Login using Firebase Auth (Email/Password).
+- **Task Management (CRUD):** Add, View, Toggle (Complete/Pending), and Delete tasks.
+- **Task Metadata:** Each task saves a Title, Description, Date-Time, Deadline, and Priority.
+- **State Management:** Fully implemented structured app-wide state using React's **Context API**.
+- **Tech Stack:** React Native CLI & TypeScript. Clean architecture handling types elegantly.
+
+### 🏆 Bonus / Outstanding Features
+- **Mixed-Sorting Algorithm:** Intelligently sorts tasks by calculating a combined weight of **Priority** (High/Medium/Low) + **Deadline Proximity** (sooner deadlines float to top).
+- **Advanced Filtering & Search:** Filter by "All", "Pending", "Completed", and search tasks by keyword dynamically.
+- **Cool & Creative UI/UX:** 
+  - Unique Dark Mode with Glassmorphism frosted-glass styled inputs & modals.
+  - Custom Color Palettes highlighting High Priority items clearly.
+- **Clean Code & Comments:** Organized folder structures (components, screens, context, services) with proper explanatory developer comments for crucial logics.
+
+---
+
+## 📱 Screenshots / Demo
+*(Include a link or placeholders for your screenshots or a YouTube/Drive link of your Demo Video here)*
+
+---
+
+## 🛠 Setup & Installation
+
+**1. Clone the repository**
+```bash
+git clone <your-github-repo-url>
+cd todoAPP
+```
+
+**2. Install dependencies**
+```bash
+npm install
+```
+
+**3. Run the App (Android / iOS)**
+```bash
+# Start the Metro Bundler
+npm start
+
+# In a new terminal tab, run on Android:
+npx react-native run-android
+
+# OR run on iOS:
+npx react-native run-ios
+```
+
+---
+
+## 🧑‍💻 Architecture Summary
+- **`/src/components`**: Reusable UI parts (`TaskCard.tsx`).
+- **`/src/context`**: Context Providers handling App State (`AuthContext.tsx`, `TaskContext.tsx`).
+- **`/src/screens`**: Main Application views (`AuthScreen.tsx`, `TodoListScreen.tsx`).
+- **`/src/theme`**: Holds Design System colors & tokens (`colors.ts`).
+- **`/src/types`**: TypeScript interfaces defining exact data models (`index.ts`).
+
+---
+
+**Submitted by:** Aditya
+**For Assignment Evaluation**
