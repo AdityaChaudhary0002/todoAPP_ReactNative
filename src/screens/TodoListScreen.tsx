@@ -1,11 +1,13 @@
 import React, { useContext, useState, useMemo } from 'react';
 import { View, FlatList, StyleSheet, Text, TouchableOpacity, TextInput, Modal, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { TaskContext } from '../context/TaskContext';
+import { AuthContext } from '../context/AuthContext';
 import { TaskCard } from '../components/TaskCard';
 import { COLORS } from '../theme/colors';
 
 export const TodoListScreen = () => {
   const { tasks, addTask, toggleTaskCompletion, deleteTask } = useContext(TaskContext);
+  const { logout } = useContext(AuthContext);
   const [filter, setFilter] = useState<'All' | 'Pending' | 'Completed'>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [isModalVisible, setModalVisible] = useState(false);
@@ -83,7 +85,12 @@ export const TodoListScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>My Tasks</Text>
+      <View style={styles.headerRow}>
+        <Text style={styles.header}>My Tasks</Text>
+        <TouchableOpacity style={styles.logoutBtn} onPress={logout}>
+          <Text style={styles.logoutText}>Logout</Text>
+        </TouchableOpacity>
+      </View>
 
       <TextInput
         style={styles.searchInput}
@@ -150,7 +157,10 @@ export const TodoListScreen = () => {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.background, paddingHorizontal: 20, paddingTop: 60 },
-  header: { fontSize: 32, fontWeight: 'bold', color: COLORS.text, marginBottom: 20 },
+  headerRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 },
+  header: { fontSize: 32, fontWeight: 'bold', color: COLORS.text },
+  logoutBtn: { backgroundColor: 'rgba(207, 102, 121, 0.2)', paddingVertical: 8, paddingHorizontal: 12, borderRadius: 8 },
+  logoutText: { color: COLORS.error, fontWeight: 'bold' },
   searchInput: { backgroundColor: COLORS.surface, color: COLORS.text, padding: 14, borderRadius: 12, marginBottom: 16, borderWidth: 1, borderColor: COLORS.surfaceBorder, fontSize: 16 },
   filterRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 16 },
   filterBtn: { flex: 1, paddingVertical: 10, alignItems: 'center', borderRadius: 8, backgroundColor: COLORS.surface, marginHorizontal: 4, borderWidth: 1, borderColor: 'transparent' },
